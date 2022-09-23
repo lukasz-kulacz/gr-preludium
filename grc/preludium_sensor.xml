@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<block>
+  <name>sensor</name>
+  <key>preludium_sensor</key>
+  <category>preludium</category>
+  <import>import preludium</import>
+  <make>preludium.sensor($index, $server_address, $threshold, $n_samples, $sensing_factor)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Sensor ID</name>
+    <key>index</key>
+    <value>sensor-0</value>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Server address</name>
+    <key>server_address</key>
+    <value>http://150.254.2.37:8001/report</value>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Threshold power [dBm]</name>
+    <key>threshold</key>
+    <value>-110.5619</value>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>Number of samples</name>
+    <key>n_samples</key>
+    <value>100</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Factor of sensing time</name>
+    <key>sensing_factor</key>
+    <value>0.001</value>
+    <type>float</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>
