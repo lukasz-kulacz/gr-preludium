@@ -4,45 +4,52 @@
   <key>preludium_sensor</key>
   <category>preludium</category>
   <import>import preludium</import>
-  <make>preludium.sensor($index, $server_address, $threshold, $n_samples, $sensing_factor)</make>
+  <make>preludium.sensor($index, $server_address, $sensing_factor, $noise_samples, $noise_split, $noise_iterations)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
   <param>
-    <name>Sensor ID</name>
+    <name>Server: sensor ID</name>
     <key>index</key>
     <value>sensor-0</value>
     <type>string</type>
   </param>
 
   <param>
-    <name>Server address</name>
+    <name>Server: address</name>
     <key>server_address</key>
-    <value>http://150.254.2.37:8001/report</value>
+    <value>http://150.254.2.37:8001</value>
     <type>string</type>
   </param>
 
   <param>
-    <name>Threshold power [dBm]</name>
-    <key>threshold</key>
-    <value>-110.5619</value>
+    <name>Sensing: factor of sensing time</name>
+    <key>sensing_factor</key>
+    <value>0.001</value>
     <type>float</type>
   </param>
 
   <param>
-    <name>Number of samples</name>
-    <key>n_samples</key>
-    <value>100</value>
+    <name>Noise: number of samples</name>
+    <key>noise_samples</key>
+    <value>10000</value>
     <type>int</type>
   </param>
 
   <param>
-    <name>Factor of sensing time</name>
-    <key>sensing_factor</key>
-    <value>0.001</value>
-    <type>float</type>
+    <name>Noise: number of subbands</name>
+    <key>noise_split</key>
+    <value>20</value>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Noise: number of iterations</name>
+    <key>noise_iterations</key>
+    <value>10</value>
+    <type>int</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:

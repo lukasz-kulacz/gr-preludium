@@ -332,12 +332,8 @@
       <value>True</value>
     </param>
     <param>
-      <key>sensing_factor</key>
-      <value>0.001</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(368, 224)</value>
+      <value>(320, 217)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -356,20 +352,28 @@
       <value>0</value>
     </param>
     <param>
-      <key>n_samples</key>
-      <value>100</value>
+      <key>noise_iterations</key>
+      <value>10</value>
     </param>
     <param>
-      <key>index</key>
-      <value>sensor-0</value>
+      <key>noise_samples</key>
+      <value>100000</value>
+    </param>
+    <param>
+      <key>noise_split</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>sensing_factor</key>
+      <value>0.001</value>
     </param>
     <param>
       <key>server_address</key>
-      <value>http://150.254.2.37:8001/report</value>
+      <value>http://150.254.2.37:8001</value>
     </param>
     <param>
-      <key>threshold</key>
-      <value>-110.5619</value>
+      <key>index</key>
+      <value>sensor-2</value>
     </param>
   </block>
   <block>

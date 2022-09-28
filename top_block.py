@@ -3,24 +3,18 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Sep 23 10:58:08 2022
+# Generated: Wed Sep 28 11:54:08 2022
 ##################################################
 
 if __name__ == '__main__':
     import ctypes
     import sys
-    import random
     if sys.platform.startswith('linux'):
         try:
             x11 = ctypes.cdll.LoadLibrary('libX11.so')
             x11.XInitThreads()
         except:
             print "Warning: failed to XInitThreads()"
-
-    if len(sys.argv) == 1:
-        sensor_name = "sensor-" + str(random.randint(100, 999))
-    else:
-        sensor_name = sys.argv[1]
 
 from gnuradio import blocks
 from gnuradio import eng_notation
@@ -151,7 +145,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.uhd_usrp_source_0.set_samp_rate(samp_rate)
         self.uhd_usrp_source_0.set_center_freq(freq, 0)
         self.uhd_usrp_source_0.set_gain(gain, 0)
-        self.preludium_sensor_0 = preludium.sensor(sensor_name, "http://150.254.2.37:8001/report", -110.5619, 100, 0.001)
+        self.preludium_sensor_0 = preludium.sensor("sensor-2", "http://150.254.2.37:8001", 0.001, 100000, 10, 10)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
 
         ##################################################
