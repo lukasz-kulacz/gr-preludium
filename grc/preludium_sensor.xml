@@ -4,7 +4,7 @@
   <key>preludium_sensor</key>
   <category>preludium</category>
   <import>import preludium</import>
-  <make>preludium.sensor($index, $server_address, $sensing_factor, $noise_samples, $noise_split, $noise_iterations)</make>
+  <make>preludium.sensor($index, $server_address)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -22,34 +22,6 @@
     <key>server_address</key>
     <value>http://150.254.2.37:8001</value>
     <type>string</type>
-  </param>
-
-  <param>
-    <name>Sensing: factor of sensing time</name>
-    <key>sensing_factor</key>
-    <value>0.001</value>
-    <type>float</type>
-  </param>
-
-  <param>
-    <name>Noise: number of samples</name>
-    <key>noise_samples</key>
-    <value>10000</value>
-    <type>int</type>
-  </param>
-
-  <param>
-    <name>Noise: number of subbands</name>
-    <key>noise_split</key>
-    <value>20</value>
-    <type>int</type>
-  </param>
-
-  <param>
-    <name>Noise: number of iterations</name>
-    <key>noise_iterations</key>
-    <value>10</value>
-    <type>int</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:
